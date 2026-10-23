@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 96" role="img" aria-label="ProjectSignal">
+  <!-- Lockup for documents and slides. Text uses IBM Plex Sans Condensed Bold; falls back to Arial Narrow. -->
+  <path d="M51 15H11v66h66V41" fill="none" stroke="#AC5B26" stroke-width="9" stroke-linecap="square"/>
+  <rect x="51" y="3" width="34" height="34" fill="#AC5B26"/>
+  <path d="M59 20l7 7 12.5-14" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="square"/>
+  <text x="106" y="70" font-family="'IBM Plex Sans Condensed','Arial Narrow',Arial,sans-serif" font-weight="700" font-size="58" letter-spacing="-0.5"><tspan fill="#1F2328">Project</tspan><tspan fill="#AC5B26">Signal</tspan></text>
+</svg>
