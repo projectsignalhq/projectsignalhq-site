@@ -70,3 +70,13 @@ footer a{color:var(--muted)}
 .form .btn{border:0;cursor:pointer;font:700 17px "Source Sans 3",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;justify-self:start}
 .form .btn:disabled{opacity:.6;cursor:default}
 @media (max-width:560px){.two{grid-template-columns:1fr}}
+/* Photos (Adobe Stock, Enhanced license; sources and license record in docs/site_publishing.md) */
+.band{margin:0;border-top:1px solid var(--rule)}
+.band img{display:block;width:100%;height:clamp(200px,34vw,420px);object-fit:cover;object-position:30% 60%}
+.band+section{border-top:3px solid var(--ink)}
+.photo{margin:18px 0 0}
+.photo img{display:block;width:100%;height:clamp(190px,30vw,290px);object-fit:cover;border-top:3px solid var(--ink)}
+.photo figcaption{color:var(--muted);font-size:15px;margin-top:8px;max-width:700px}
+.ryan{display:grid;gap:18px}
+.ryan .side{display:block;width:100%;height:100%;min-height:220px;max-height:320px;object-fit:cover}
+@media (min-width:700px){.ryan:has(.side){grid-template-columns:1fr 1.4fr;align-items:stretch}.ryan .side{max-height:none}}
