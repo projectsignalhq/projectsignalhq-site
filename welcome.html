@@ -21,11 +21,12 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header class="top"><div class="wrap"><a class="wordmark" href="index.html"><img src="favicon.svg" alt=""><span class="wm">Project<span>Signal</span></span></a><a class="contact" href="mailto:ryan@projectsignalhq.com">ryan@projectsignalhq.com</a></div></header>
+<header class="top"><div class="wrap"><a class="wordmark" href="index.html"><img src="favicon.svg" alt=""><span class="wm">Project<span>Signal</span></span></a><nav class="topnav"><a class="contact" href="mailto:ryan@projectsignalhq.com">ryan@projectsignalhq.com</a><a class="manage" href="https://billing.stripe.com/p/login/8x228q0Ri2bh69bcdr8Zq00">Manage subscription</a></nav></div></header>
 <main class="wrap doc">
 <p class="eyebrow">Sign-up received</p>
 <h1 id="hello">You're in. Your first list is on the way.</h1>
 <p class="lede">Thanks for signing up for ProjectSignal. Here's what happens next.</p>
+<p class="notice" id="sentto" hidden>We've emailed a confirmation to <b id="sentto-addr"></b>. Not the right address? <a href="signup.html">Sign up again with the correct one</a>.</p>
 <ol class="next">
   <li><b>Within one business day</b>We read your answers and your website, and look up the mechanical permits the City of Seattle lists under your company's name (the City records the installing contractor on each one). From that we build a profile of your shop and set your filters. You'll get a short welcome email from ryan@projectsignalhq.com confirming them.</li>
   <li><b>Monday</b>Your first list arrives: commercial projects in plan review with mechanical scope, each linked to the City's official record.</li>
@@ -38,6 +39,9 @@
 <script>
 (function () {
   var n = new URLSearchParams(location.search).get("n");
+  var em = null;
+  try { em = sessionStorage.getItem("ps_signup_email"); } catch (e) {}
+  if (em) { document.getElementById("sentto-addr").textContent = em; document.getElementById("sentto").hidden = false; }
   if (n) document.getElementById("hello").textContent = "You're in, " + n.slice(0, 40) + ". Your first list is on the way.";
 })();
 </script>

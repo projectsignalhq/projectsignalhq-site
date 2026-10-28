@@ -20,7 +20,7 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header class="top"><div class="wrap"><a class="wordmark" href="index.html"><img src="favicon.svg" alt=""><span class="wm">Project<span>Signal</span></span></a><a class="contact" href="mailto:ryan@projectsignalhq.com">ryan@projectsignalhq.com</a></div></header>
+<header class="top"><div class="wrap"><a class="wordmark" href="index.html"><img src="favicon.svg" alt=""><span class="wm">Project<span>Signal</span></span></a><nav class="topnav"><a class="contact" href="mailto:ryan@projectsignalhq.com">ryan@projectsignalhq.com</a><a class="manage" href="https://billing.stripe.com/p/login/8x228q0Ri2bh69bcdr8Zq00">Manage subscription</a></nav></div></header>
 <main class="wrap doc">
 <h1>Build my list</h1>
 <p class="lede">Two minutes. Tell us what you chase. We also read your website and the public Seattle mechanical permits that list your company as the contractor, so your Monday list is ranked by what fits your shop.</p>
@@ -79,6 +79,7 @@
         clearTimeout(timer);
         if (res && res.ok) {
           var first = String(data.name).trim().split(/\s+/)[0] || "";
+          try { sessionStorage.setItem("ps_signup_email", String(data.email).trim().slice(0, 120)); } catch (e) {}
           location.assign("welcome.html" + (first ? "?n=" + encodeURIComponent(first.slice(0, 40)) : ""));
         } else fail((res && res.error) || "Something went wrong. Please try again.");
       })
